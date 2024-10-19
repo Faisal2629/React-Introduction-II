@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const ProductPage = () => {
+          // Event handler for alert
+          const handleButtonClick = () => {
+            alert('Product added to cart!');
+          };
+      
+          return (
+            <>
+              <div className="container">
+                {/* Product Image */}
+                <img
+                  src="https://seikowatches.co.in/cdn/shop/files/home-page_Best-sellers-banners_prospex_1024x1024.jpg?v=1716791517"
+                  alt="Automatic Watch"
+                  className="product-image"
+                />
+      
+                {/* Product Info */}
+                <div className="product-info">
+                  <h2 className="title">Automatic Watch</h2>
+                  <p className="price">$350.00 USD</p>
+                  <p className="short-description">
+                    Lorem ipsum dolor sit amet, consectetur sadipsicing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                  </p>
+                  <p className="long-description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid amet ea delectus dolores 
+                    expedita hic, ipsum maxime modi nam officiis porro, quae, quisquam quos reprehenderit velit? Natus, totam.
+                  </p>
+      
+                  {/* Features */}
+                  <div className="section">
+                    <h3 className="section-title">FEATURES</h3>
+                    <ul className="feature-list">
+                      <div id='list1'>
+                        <li>Chronograph</li>
+                        <li>Master Chronometer Certified</li>
+                        <li>Tachymeter</li>
+                      </div>
+                      <div id='list2'>
+                        <li>Anti-magnetic</li>
+                        <li>Chronometer</li>
+                        <li>Small seconds</li>
+                      </div>
+                    </ul>
+                  </div>
+      
+                  {/* Product Details */}
+                  <div className="section">
+                    <h3 className="section-title">PRODUCT DETAILS</h3>
+                    <ul className="details-list">
+                      <li><b>Between lugs:</b> 20 mm</li>
+                      <li><b>Bracelet:</b> leather strap</li>
+                      <li><b>Case:</b> Steel</li>
+                      <li><b>Case diameter:</b> 42 mm</li>
+                      <li><b>Dial color:</b> Black</li>
+                      <li><b>Crystal:</b> Domed, scratch-resistant sapphire crystal with anti-reflective treatment inside</li>
+                      <li><b>Water resistance:</b> 5 bar (50 metres / 167 feet)</li>
+                    </ul>
+                  </div>
+      
+                  {/* Add to Cart Button */}
+                  <button className="add-to-cart-button" onClick={handleButtonClick}>
+                    ADD TO CART
+                  </button>
+      
+                  {/* Delivery Info */}
+                  <p className="delivery-info">• 2-3 business days delivery</p>
+                </div>
+              </div>
+            </>
+          );
+        };
+      
+        // Rendering the React component
+        ReactDOM.render(<ProductPage />, document.getElementById("root"));
+      </script>
+      
+  </body>
+</html>
+
+//Explanation of the Code:
+The product page contains an image, product information, features, and details, all laid out using React components.
+A button triggers an alert using an event handler when clicked.
+The layout and styles are clean and responsive using CSS classes defined in an external stylesheet.
+Challenges Faced:
+Image URL: Make sure the image URL in the src attribute is valid and accessible.
+Class Management: Ensure that your CSS file is correctly linked to the HTML, and the class names in your JSX match those in the CSS file.
